@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="176dp"
+    android:background="#1976D2"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- User Avatar -->
+<ImageView
+android:id="@+id/imageView"
+android:layout_width="64dp"
+android:layout_height="64dp"
+android:contentDescription="Profile Image"
+android:src="@drawable/user" />  <!-- Replace with your profile icon drawable -->
+
+    <!-- User Name -->
+<TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginTop="8dp"
+android:text="User Name"
+    android:textSize="20sp"
+    android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+    android:textColor="#FFFFFF" />
+
+    <!-- User Role -->
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Student"
+    android:textSize="16sp"
+    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+    android:textColor="#FFFFFF" />
+
+    </LinearLayout>
