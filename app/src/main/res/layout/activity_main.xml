@@ -11,7 +11,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F5F5F5"
+        android:background="#E4F2FB"
         android:fitsSystemWindows="true">
 
 
@@ -183,17 +183,13 @@
 
                 </LinearLayout>
 
-                <!-- Action Buttons -->
-                <!-- Features Section -->
-
-
-                    <!-- Subtle gradient background for visual pop (optional; remove if not needed) -->
-                    <com.google.android.material.card.MaterialCardView
+                <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         app:cardCornerRadius="20dp"
-                        app:cardElevation="3dp">
+                        app:cardElevation="3dp"
+                        android:layout_marginHorizontal="4dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -252,15 +248,13 @@
 
                     </com.google.android.material.card.MaterialCardView>
 
-
-
-
                 <!-- Premium Make Complaint Section -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/make_complaint_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="4dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?attr/selectableItemBackground"
@@ -268,7 +262,7 @@
                     app:cardElevation="3dp"
                     app:cardBackgroundColor="?attr/colorSurface"
                     app:strokeWidth="1dp"
-                    android:background="@drawable/drawer_header_gradient">  <!-- Reuses your existing gradient for premium look -->
+                    android:background="@drawable/drawer_header_gradient">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -334,7 +328,8 @@
                     app:cardCornerRadius="16dp"
                     app:cardElevation="3dp"
                     app:cardBackgroundColor="#FFFFFF"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginHorizontal="4dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -346,9 +341,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Help us improve! Share your feedback."
+                            android:textColor="#212121"
                             android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:textColor="#212121" />
+                            android:textStyle="bold" />
 
                         <RatingBar
                             android:id="@+id/feedback_rating"
@@ -367,11 +362,11 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/feedback_submit_button"
+                            style="@style/Widget.Material3.Button.TextButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="Submit"
-                            style="@style/Widget.Material3.Button.TextButton" />
+                            android:text="Submit" />
 
                     </LinearLayout>
 
@@ -385,11 +380,12 @@
 
     <!-- Navigation Drawer -->
     <com.google.android.material.navigation.NavigationView
-    android:id="@+id/nav_view"
-    android:layout_width="280dp"
-    android:layout_height="match_parent"
-    android:layout_gravity="start"
-    app:headerLayout="@layout/nav_header_main"
-    app:menu="@menu/activity_main_drawer" />
+        android:background="#E4F2FB"
+        android:id="@+id/nav_view"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
 
     </androidx.drawerlayout.widget.DrawerLayout>

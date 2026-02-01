@@ -35,21 +35,27 @@ android {
 }
 
 dependencies {
+
+    // Firebase BOM
+    implementation(platform("com.google.firebase:firebase-bom:34.8.0"))
+
+    // Firebase services (NO versions here)
+    implementation("com.google.firebase:firebase-firestore")
+    implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-storage")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-analytics")
+
+    // Android core
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation(libs.firebase.firestore)
-    implementation(libs.firebase.database)
-    implementation(libs.firebase.storage)
-    implementation(libs.firebase.auth)
+
+    implementation("androidx.drawerlayout:drawerlayout:1.1.1")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation("com.google.android.material:material:1.11.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.drawerlayout:drawerlayout:1.1.1")
-    implementation(platform("com.google.firebase:firebase-bom:34.8.0"))
-    implementation("com.google.firebase:firebase-analytics")
-    implementation("de.hdodenhof:circleimageview:3.1.0")
 }
