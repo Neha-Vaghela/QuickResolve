@@ -15,226 +15,363 @@
         android:fitsSystemWindows="true">
 
 
-    <!-- App Bar with Enhanced Gradient and Features -->
-        <com.google.android.material.appbar.AppBarLayout
+        <!-- App Bar with Enhanced Gradient and Features -->
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:theme="@style/ThemeOverlay.Material3.Dark">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/drawer_header_gradient"
+                app:title="Smart Complaint System"
+                app:titleTextColor="#FFFFFF"
+                app:titleTextAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                app:popupTheme="@style/ThemeOverlay.Material3.Light"
+                app:navigationIcon="@drawable/outline_art_track_24"
+                app:navigationIconTint="#FFFFFF" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- Scrollable Main Content -->
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
-            android:theme="@style/ThemeOverlay.Material3.Dark">
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@drawable/drawer_header_gradient"
-            app:title="Smart Complaint System"
-            app:titleTextColor="#FFFFFF"
-            app:titleTextAppearance="@style/TextAppearance.Material3.HeadlineSmall"
-            app:popupTheme="@style/ThemeOverlay.Material3.Light"
-            app:navigationIcon="@drawable/outline_art_track_24"
-            app:navigationIconTint="#FFFFFF" />
-
-        <!-- Right-Side Icons (Search and Profile) -->
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_gravity="end"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:paddingEnd="16dp"-->
-<!--            android:gravity="center_vertical">-->
-
-<!--            &lt;!&ndash; Search Icon &ndash;&gt;-->
-<!--            <ImageView-->
-<!--                android:id="@+id/search_icon"-->
-<!--                android:layout_width="40dp"-->
-<!--                android:layout_height="40dp"-->
-<!--                android:layout_marginEnd="8dp"-->
-<!--                android:src="@drawable/outline_art_track_24"-->
-<!--                android:contentDescription="Search"-->
-<!--                android:tint="#FFFFFF"-->
-<!--                android:background="?attr/selectableItemBackgroundBorderless"-->
-<!--                android:tooltipText="Search complaints or features"-->
-<!--                android:clickable="true"-->
-<!--                android:focusable="true" />-->
-
-<!--            &lt;!&ndash; Profile Icon with Badge &ndash;&gt;-->
-<!--            <FrameLayout-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="8dp">-->
-
-<!--                <ImageView-->
-<!--                    android:id="@+id/profile_icon"-->
-<!--                    android:layout_width="40dp"-->
-<!--                    android:layout_height="40dp"-->
-<!--                    android:src="@drawable/outline_art_track_24"-->
-<!--                    android:contentDescription="Profile menu"-->
-<!--                    android:background="?attr/selectableItemBackgroundBorderless"-->
-<!--                    android:tooltipText="View profile and settings"-->
-<!--                    android:clickable="true"-->
-<!--                    android:focusable="true" />-->
-
-<!--                &lt;!&ndash; Notification Badge with Animation &ndash;&gt;-->
-<!--                <TextView-->
-<!--                    android:id="@+id/profile_badge"-->
-<!--                    android:layout_width="18dp"-->
-<!--                    android:layout_height="18dp"-->
-<!--                    android:layout_gravity="top|end"-->
-<!--                    android:background="@drawable/outline_art_track_24"-->
-<!--                    android:text="3"-->
-<!--                    android:textColor="#FFFFFF"-->
-<!--                    android:textSize="10sp"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:gravity="center"-->
-<!--                    android:visibility="gone"/>-->
-
-<!--            </FrameLayout>-->
-
-<!--        </LinearLayout>-->
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <!-- Scrollable Main Content -->
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-
-            <!-- Metrics Cards (3 in a row) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="16dp">
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <!-- Complaints Resolved Card -->
+
+                <!-- Metrics Cards (3 in a row) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <!-- Complaints Resolved Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="140dp"
+                        android:layout_weight="1"
+                        android:layout_margin="4dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="3dp"
+                        app:cardBackgroundColor="#FFFFFF">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/correct"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="500+"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="#1976D2"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Complaints Resolved"
+                                android:textSize="12sp"
+                                android:textColor="#666666" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Active Users Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="140dp"
+                        android:layout_weight="1"
+                        android:layout_margin="4dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="3dp"
+                        app:cardBackgroundColor="#FFFFFF">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/actice_user" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1,000+"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="#1976D2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Active Users"
+                                android:textSize="12sp"
+                                android:textColor="#666666" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Educational Institutions Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="140dp"
+                        android:layout_weight="1"
+                        android:layout_margin="4dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="3dp"
+                        app:cardBackgroundColor="#FFFFFF">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/institute"
+                                android:padding="8dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="150+"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="#1976D2"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Educational Institutions"
+                                android:textSize="12sp"
+                                android:textColor="#666666"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <!-- Action Buttons -->
+                <!-- Features Section -->
+
+
+                    <!-- Subtle gradient background for visual pop (optional; remove if not needed) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="3dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="20dp"
+                            android:background="@color/white">
+
+                            <!-- Title Row -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="36dp"
+                                    android:layout_height="36dp"
+                                    android:src="@drawable/feature"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:text="Features"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#0097A7"/>
+                            </LinearLayout>
+
+                            <!-- Description -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="Track complaints, get real-time updates, monitor status, and ensure faster resolutions."
+                                android:textSize="15sp"
+                                android:textColor="@color/black"/>
+
+                            <!-- Explore Button -->
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnExplore"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="16dp"
+                                android:text="Explore Features"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:backgroundTint="#1976D2"
+                                app:cornerRadius="14dp"
+                                android:textSize="18sp"
+                                android:layout_marginHorizontal="40dp"/>
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+                <!-- Premium Make Complaint Section -->
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_weight="1"
-                    android:layout_margin="4dp"
-                    app:cardCornerRadius="16dp"
+                    android:id="@+id/make_complaint_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="20dp"
                     app:cardElevation="3dp"
-                    app:cardBackgroundColor="#FFFFFF">
+                    app:cardBackgroundColor="?attr/colorSurface"
+                    app:strokeWidth="1dp"
+                    android:background="@drawable/drawer_header_gradient">  <!-- Reuses your existing gradient for premium look -->
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:padding="16dp">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="24dp"
+                        android:background="@color/white"                        >
 
+                        <!-- Icon (e.g., complaint-related) -->
                         <ImageView
                             android:layout_width="48dp"
                             android:layout_height="48dp"
-                            android:src="@drawable/correct"/>
+                            android:layout_marginEnd="16dp"
+                            android:src="@drawable/complaint_img"
+                            android:contentDescription="Complaint icon"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <!-- Text Content -->
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="500+"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            android:textColor="#1976D2"/>
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Complaints Resolved"
-                            android:textSize="12sp"
-                            android:textColor="#666666" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Make Complaint"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="#0097A7"
+                                android:fontFamily="sans-serif-medium" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="File your complaint quickly and securely"
+                                android:textSize="14sp"
+                                android:textColor="#1976D2"
+                                android:alpha="0.8" />
+
+                        </LinearLayout>
+
+                        <!-- Arrow Icon -->
+                        <ImageView
+                            android:id="@+id/complaint"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="16dp"
+                            android:src="@drawable/arrow"
+                            android:contentDescription="Proceed to make complaint" />
 
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Active Users Card -->
+                <!-- Feedback Section -->
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_weight="1"
-                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     app:cardCornerRadius="16dp"
                     app:cardElevation="3dp"
-                    app:cardBackgroundColor="#FFFFFF">
+                    app:cardBackgroundColor="#FFFFFF"
+                    android:layout_marginBottom="10dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:gravity="center"
                         android:padding="16dp">
 
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:src="@drawable/actice_user" />
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="1,000+"
-                            android:textSize="24sp"
+                            android:text="Help us improve! Share your feedback."
+                            android:textSize="16sp"
                             android:textStyle="bold"
-                            android:textColor="#1976D2" />
+                            android:textColor="#212121" />
 
-                        <TextView
+                        <RatingBar
+                            android:id="@+id/feedback_rating"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Active Users"
-                            android:textSize="12sp"
-                            android:textColor="#666666" />
+                            android:layout_marginTop="8dp"
+                            android:numStars="5"
+                            android:stepSize="1" />
 
-                    </LinearLayout>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/feedback_comment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:hint="Optional comment" />
 
-                </com.google.android.material.card.MaterialCardView>
-
-                <!-- Educational Institutions Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_weight="1"
-                    android:layout_margin="4dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="3dp"
-                    app:cardBackgroundColor="#FFFFFF">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:src="@drawable/institute"
-                            android:padding="8dp"/>
-
-                        <TextView
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/feedback_submit_button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="150+"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            android:textColor="#1976D2"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Educational Institutions"
-                            android:textSize="12sp"
-                            android:textColor="#666666"
-                            android:gravity="center"/>
+                            android:layout_marginTop="8dp"
+                            android:text="Submit"
+                            style="@style/Widget.Material3.Button.TextButton" />
 
                     </LinearLayout>
 
@@ -242,215 +379,17 @@
 
             </LinearLayout>
 
-            <!-- Action Buttons -->
-            <!-- Features Section -->
+        </androidx.core.widget.NestedScrollView>
 
-
-                <!-- Subtle gradient background for visual pop (optional; remove if not needed) -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="2dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="20dp"
-                        android:background="@color/white">
-
-                        <!-- Title Row -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical">
-
-                            <ImageView
-                                android:layout_width="36dp"
-                                android:layout_height="36dp"
-                                android:src="@drawable/feature"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:text="Features"
-                                android:textSize="20sp"
-                                android:textStyle="bold"
-                                android:textColor="#0097A7"/>
-                        </LinearLayout>
-
-                        <!-- Description -->
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:text="Track complaints, get real-time updates, monitor status, and ensure faster resolutions."
-                            android:textSize="15sp"
-                            android:textColor="@color/black"/>
-
-                        <!-- Explore Button -->
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnExplore"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="16dp"
-                            android:text="Explore Features"
-                            android:textAllCaps="false"
-                            android:textColor="@color/white"
-                            android:backgroundTint="#1976D2"
-                            app:cornerRadius="14dp"
-                            android:textSize="18sp"
-                            android:layout_marginHorizontal="40dp"/>
-
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-
-
-
-            <!-- Premium Make Complaint Section -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/make_complaint_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?attr/selectableItemBackground"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="8dp"
-                app:cardBackgroundColor="?attr/colorSurface"
-                app:strokeColor="?attr/colorOutline"
-                app:strokeWidth="1dp"
-                android:background="@drawable/drawer_header_gradient">  <!-- Reuses your existing gradient for premium look -->
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:padding="24dp"
-                    android:background="@color/white"
-                    >
-
-                    <!-- Icon (e.g., complaint-related) -->
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:layout_marginEnd="16dp"
-                        android:src="@drawable/complaint_img"
-                        android:contentDescription="Complaint icon"/>
-
-                    <!-- Text Content -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Make Complaint"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            android:textColor="#0097A7"
-                            android:fontFamily="sans-serif-medium" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="File your complaint quickly and securely"
-                            android:textSize="14sp"
-                            android:textColor="#1976D2"
-                            android:alpha="0.8" />
-
-                    </LinearLayout>
-
-                    <!-- Arrow Icon -->
-                    <ImageView
-                        android:id="@+id/complaint"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_marginStart="16dp"
-                        android:src="@drawable/arrow"
-                        android:contentDescription="Proceed to make complaint" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Feedback Section -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="3dp"
-                app:cardBackgroundColor="#FFFFFF"
-                android:layout_marginBottom="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Help us improve! Share your feedback."
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="#212121" />
-
-                    <RatingBar
-                        android:id="@+id/feedback_rating"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:numStars="5"
-                        android:stepSize="1" />
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/feedback_comment"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:hint="Optional comment" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/feedback_submit_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Submit"
-                        style="@style/Widget.Material3.Button.TextButton" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-        </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <!-- Navigation Drawer -->
-<com.google.android.material.navigation.NavigationView
-android:id="@+id/nav_view"
-android:layout_width="280dp"
-android:layout_height="match_parent"
-android:layout_gravity="start"
-app:headerLayout="@layout/nav_header_main"
-app:menu="@menu/activity_main_drawer" />
+    <com.google.android.material.navigation.NavigationView
+    android:id="@+id/nav_view"
+    android:layout_width="280dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    app:headerLayout="@layout/nav_header_main"
+    app:menu="@menu/activity_main_drawer" />
 
     </androidx.drawerlayout.widget.DrawerLayout>

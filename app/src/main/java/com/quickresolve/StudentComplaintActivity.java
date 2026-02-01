@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -11,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -36,6 +38,7 @@ public class StudentComplaintActivity extends AppCompatActivity {
     private Uri imageUri; // optional image
     private FirebaseFirestore db;
     private StorageReference storageRef;
+    Toolbar toolbar;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -61,11 +64,20 @@ public class StudentComplaintActivity extends AppCompatActivity {
         btnSubmit = findViewById(R.id.btnSubmitComplaint);
         btnAttachImage = findViewById(R.id.btnAttachImage);
 
+        toolbar = findViewById(R.id.toolbar);
+
+        toolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         FirebaseDatabase.getInstance().getReference().child("Test").child("Test another").setValue("NEha");
 
 
 
-    // Set default branch selection
+        // Set default branch selection
         rgBranch.check(R.id.rbICT);
         submitDefaultComplaint();
 

@@ -103,8 +103,6 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
             // Navigate to complaints
             Toast.makeText(this, "My Complaints", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_explore_features) {
-//            Intent intent = new Intent(this, ExploreFeaturesActivity.class);
-//            startActivity(intent);
             Toast.makeText(this, "Move on ExploreFeaturesActivity ", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_feedback) {
             // Scroll to feedback or show dialog
@@ -117,12 +115,4 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
         return true;
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-//            drawerLayout.closeDrawer(GravityCompat.START);
-//        } else {
-//            super.onBackPressed();
-//        }
-//    }
 }

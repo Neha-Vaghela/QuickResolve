@@ -13,7 +13,8 @@
         android:theme="@style/Theme.QuickResolve">
         <activity
             android:name=".FeatureActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.QuickResolve"/>
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
@@ -28,9 +29,6 @@
             android:exported="false" />
         <activity
             android:name=".StudentComplaintActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DummyActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

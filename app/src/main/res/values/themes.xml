@@ -1,17 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.QuickResolve" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
+<!--    <style name="Base.Theme.QuickResolve" parent="Theme.Material3.DayNight.NoActionBar">-->
+<!--        &lt;!&ndash; Customize your light theme here. &ndash;&gt;-->
+<!--        &lt;!&ndash; <item name="colorPrimary">@color/my_light_primary</item> &ndash;&gt;-->
+<!--    </style>-->
 
     <style name="Theme.QuickResolve" parent="Theme.Material3.DayNight.NoActionBar">
 
-        <!-- FORCE STATUS BAR COLOR -->
-        <item name="android:statusBarColor">#1976D2</item>
 
-        <!-- FORCE WHITE ICONS -->
+        <!-- STATUS BAR -->
+        <item name="android:statusBarColor">#1976D2</item>
         <item name="android:windowLightStatusBar">false</item>
+
 
     </style>
 

@@ -51,4 +51,5 @@ dependencies {
     implementation("androidx.drawerlayout:drawerlayout:1.1.1")
     implementation(platform("com.google.firebase:firebase-bom:34.8.0"))
     implementation("com.google.firebase:firebase-analytics")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 }
