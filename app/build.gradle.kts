@@ -6,7 +6,7 @@ plugins {
 android {
     namespace = "com.quickresolve"
     compileSdk {
-        version = release(36)
+        version = release(31)
     }
 
     defaultConfig {
