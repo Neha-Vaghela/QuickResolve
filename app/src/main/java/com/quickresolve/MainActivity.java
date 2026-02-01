@@ -32,6 +32,8 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
     private TextInputEditText feedbackComment;
     ImageView complaint;
 
+    MaterialButton btnExplore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,7 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
 
         // Initialize Views
         drawerLayout = findViewById(R.id.drawer_layout);
+        btnExplore = findViewById(R.id.btnExplore);
         toolbar = findViewById(R.id.toolbar);
         navigationView = findViewById(R.id.nav_view);
         feedbackSubmitButton = findViewById(R.id.feedback_submit_button);
@@ -80,6 +83,13 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
                 // Reset fields
                 feedbackRating.setRating(0);
                 feedbackComment.setText("");
+            }
+        });
+
+        btnExplore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,FeatureActivity.class));
             }
         });
     }
