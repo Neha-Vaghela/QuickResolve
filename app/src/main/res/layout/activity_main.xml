@@ -230,12 +230,26 @@
                                 android:textColor="@color/black"/>
 
                             <!-- Explore Button -->
+
+
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/btnExplore"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="16dp"
                                 android:text="Explore Features"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:backgroundTint="#1976D2"
+                                app:cornerRadius="14dp"
+                                android:textSize="18sp"
+                                android:layout_marginHorizontal="40dp"/>
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/com_list"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="16dp"
+                                android:text="Complaint list"
                                 android:textAllCaps="false"
                                 android:textColor="@color/white"
                                 android:backgroundTint="#1976D2"

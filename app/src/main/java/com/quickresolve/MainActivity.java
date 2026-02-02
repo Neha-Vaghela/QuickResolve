@@ -1,5 +1,6 @@
 package com.quickresolve; // Replace with your package name
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -18,6 +19,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputEditText;
+import com.quickresolve.User.Student.StudentProfileActivity;
 
 public class
 MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -32,8 +34,9 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
     private TextInputEditText feedbackComment;
     ImageView complaint;
 
-    MaterialButton btnExplore;
+    MaterialButton btnExplore,com_list;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +51,7 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
         feedbackRating = findViewById(R.id.feedback_rating);
         feedbackComment = findViewById(R.id.feedback_comment);
         complaint = findViewById(R.id.complaint); // Add this BEFORE setOnClickListener
+        com_list = findViewById(R.id.com_list);
 
         complaint.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +60,12 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
             }
         });
 
+        com_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ComplaintListActivity.class));
+            }
+        });
         // Set up Toolbar
         setSupportActionBar(toolbar);
 
@@ -97,7 +107,9 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.nav_home) {
+        if (id == R.id.profile) {
+            startActivity(new Intent(MainActivity.this, StudentProfileActivity.class));
+        } else if (id == R.id.nav_home) {
             // Already on home
         } else if (id == R.id.nav_my_complaints) {
             // Navigate to complaints

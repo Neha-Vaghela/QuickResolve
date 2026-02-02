@@ -15,6 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -105,7 +106,9 @@ public class StudentComplaintActivity extends AppCompatActivity {
             return;
         }
 
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         Map<String, Object> complaint = new HashMap<>();
+        complaint.put("uid", uid);
         complaint.put("fullName", fullName);
         complaint.put("enrollment", enrollment);
         complaint.put("mobile", mobile);

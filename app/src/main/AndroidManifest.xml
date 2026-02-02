@@ -12,9 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuickResolve">
         <activity
+            android:name=".User.Student.StudentProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".User.Student.StudentRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ComplaintListActivity"
+            android:exported="false" />
+        <activity
             android:name=".FeatureActivity"
             android:exported="false"
-            android:theme="@style/Theme.QuickResolve"/>
+            android:theme="@style/Theme.QuickResolve" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
@@ -32,10 +41,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-
-
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
